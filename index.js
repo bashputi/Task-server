@@ -35,7 +35,10 @@ async function run() {
         const result = await taskCollection.insertOne(taskitem);
         res.send(result);
       })
-
+      app.get('/tasks', async (req, res) => {
+        const result = await taskCollection.find().toArray();
+        res.send(result);
+      });
       app.get('/usertasks', async (req, res) => {
         try {
             console.log(req.query.email);
