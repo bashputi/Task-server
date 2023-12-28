@@ -28,7 +28,7 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
-    const taskCollection = client.db("TaskManagment").collection("tasks");
+    const taskCollection = client.db('TaskDB').collection('tasks');
 
     app.post('/tasks', async(req, res) => {
         const taskitem = req.body;
